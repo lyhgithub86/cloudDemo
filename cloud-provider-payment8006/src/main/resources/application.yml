@@ -1,0 +1,16 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: cloud-payment-service
+
+  cloud:
+    zookeeper:
+      connect-string: 116.62.107.43:2181
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+
+
+
