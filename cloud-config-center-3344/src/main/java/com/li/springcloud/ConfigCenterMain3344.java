@@ -2,6 +2,7 @@ package com.li.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 import javax.security.auth.login.Configuration;
@@ -15,6 +16,7 @@ import javax.security.auth.login.Configuration;
  */
 @SpringBootApplication
 @EnableConfigServer
+@ServletComponentScan("com.li.springcloud.filter")
 public class ConfigCenterMain3344 {
 
     public static void main(String[] args) {

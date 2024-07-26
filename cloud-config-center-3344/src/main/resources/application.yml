@@ -4,11 +4,18 @@ server:
 spring:
   application:
     name: cloud-config-center #注册进Eureka服务器的微服务名
+#rabbitmq相关配置
+
+  rabbitmq:
+    host: 116.62.107.43
+    port: 15672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/lyhgithub86/cloudDemo.git #GitHub上面的git仓库名字
+          uri: https://gitee.com/liyuhaogitee/springcloud-config.git #GitHub上面的git仓库名字
           search-paths: #搜索目录
           - springcloud-config
       label: master #读取分支
@@ -19,18 +26,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka
 
-#
-###rabbitmq相关配置,暴露bus刷新配置的端点 SpringCloud Bus动态刷新全局广播
-#management:
-#  endpoints: #暴露bus刷新配置的端点
-#    web:
-#      exposure:
-#        include: 'bus-refresh'
-#
-#
-##rabbitmq相关配置
-#rabbitmq:
-#  host: localhost
-#  port: 15672
-#  username: guest
-#  password: guest
+
+##rabbitmq相关配置,暴露bus刷新配置的端点 SpringCloud Bus动态刷新全局广播
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
+
+
